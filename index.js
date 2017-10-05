@@ -14,21 +14,21 @@ app.set('views', __dirname + '/views');
 app.set('view engine', 'ejs');
 
 app.get('/', function (request, response) {
-    response.render('pages/index', function (err, html1) {
-        response.status(200).send(html1);
+    response.render('pages/index', function (err, html) {
+        response.status(200).send(html);
     });
 });
 
 app.post('/', function (request, response) {
-    let html2 = '<html><p>Posted to Express:</p>';
+    let html = '<html><p>Posted to Express:</p>';
     const body = request.body;
     for (const key in body) {
         if (body.hasOwnProperty(key)) {
-            html2 += `<p>${key}:${body[key]}</p>`;
+            html += `<p>${key}:${body[key]}</p>`;
         }
     }
-    html2 += '</html>\n';
-    response.status(200).send(html2);
+    html += '</html>\n';
+    response.status(200).send(html);
 });
 
 app.listen(app.get('port'), function () {
