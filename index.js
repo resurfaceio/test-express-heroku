@@ -31,10 +31,6 @@ app.post('/', function (request, response) {
     response.status(200).send(html);
 });
 
-app.listen(app.get('port'), function () {
-    console.log('Node app is running on port', app.get('port'));
-});
-
 app.get('/send_basic', function (request, response) {
     response.status(200).send('whoop1');
 });
@@ -49,4 +45,8 @@ app.get('/send_json', function (request, response) {
 
 app.get('/send_json_array', function (request, response) {
     response.status(200).send([1, 2, 3]);
+});
+
+app.listen(app.get('port'), function () {
+    console.log('Node app is running on port', app.get('port'));
 });
