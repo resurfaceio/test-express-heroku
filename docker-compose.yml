@@ -1,0 +1,22 @@
+version: '3.2'
+
+services:
+  resurface:
+    image: docker.resurface.io/release/pilot
+    container_name: hackernews_resurface
+    ports:
+      - '4000:4000'
+      - '4001:4001'
+      - '4002:4002'
+
+  hackernews:
+    image: hackernews/node:latest
+    container_name: hackernews
+    volumes:
+      - ./:/usr/app/
+      - /usr/app/node_modules
+    command: node index.js
+    ports:
+      - '5000:5000'
+    env_file:
+      - .env
