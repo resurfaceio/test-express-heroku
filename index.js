@@ -2,15 +2,6 @@ const express = require('express');
 const session = require('express-session');
 
 const app = express();
-
-const resurfaceio = require('resurfaceio-logger');
-
-resurfaceio.HttpLoggerForExpress.add(app, {
-    url: 'http://resurface:4001/message',
-    rules: 'include debug'
-});
-
-
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -21,7 +12,11 @@ app.use(bodyParser.urlencoded({extended: true})); // support encoded bodies
 
 app.use(session({ secret: 'this-is-a-secret-token', cookie: { maxAge: 60000 }}));
 
-// add other middleware
+// add Resurface after body/session middleware
+const resurfaceio = require('resurfaceio-logger');
+resurfaceio.HttpLoggerForExpress.add(app, {
+    rules: 'include debug'
+});
 
 // views is directory for all template files
 app.set('views', __dirname + '/views');
