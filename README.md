@@ -1,11 +1,12 @@
-# test-express-heroku
-Express test app for Heroku
+# test-express
+Example web app built with Express
 
 This was cloned from Heroku's [Getting Started with Node.js on Heroku](https://github.com/heroku/node-js-getting-started) app at commit `428f826`. We prefer to keep our own copy to keep our tests from breaking without warning.
 
 ## Requirements
 
 * Install `docker` and `docker-compose`
+* Sign up for [Resurface Pilot Edition](https://resurface.io/pilot-edition) access
 
 ## Ports Used
 
@@ -13,8 +14,6 @@ This was cloned from Heroku's [Getting Started with Node.js on Heroku](https://g
 * 4002 - Resurface API Explorer
 * 4001 - Resurface microservice
 * 4000 - Trino database UI
-* 5000 - express.js app
-
 
 ## Deploy Locally
 
