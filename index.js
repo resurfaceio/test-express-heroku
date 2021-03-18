@@ -4,8 +4,6 @@ const session = require('express-session');
 const app = express();
 app.set('port', (process.env.PORT || 5000));
 
-app.use(express.static(__dirname + '/public'));
-
 const bodyParser = require('body-parser');
 app.use(bodyParser.json()); // support json encoded bodies
 app.use(bodyParser.urlencoded({extended: true})); // support encoded bodies
@@ -18,17 +16,8 @@ resurfaceio.HttpLoggerForExpress.add(app, {
     rules: 'include debug'
 });
 
-// views is directory for all template files
-app.set('views', __dirname + '/views');
-app.set('view engine', 'ejs');
-
 app.get('/', function (request, response) {
-    request.session.category = 'gold';
-    request.session.views++;
-    request.session.dostuff = true;
-    response.render('pages/index', function (err, html) {
-        response.status(200).send(html);
-    });
+    response.status(200).send('Hello from Express');
 });
 
 app.post('/', function (request, response) {
