@@ -3,6 +3,14 @@ const session = require('express-session');
 
 const app = express();
 
+const resurfaceio = require('resurfaceio-logger');
+
+resurfaceio.HttpLoggerForExpress.add(app, {
+    url: 'http://resurface:4001/message',
+    rules: 'include debug'
+});
+
+
 app.set('port', (process.env.PORT || 5000));
 
 app.use(express.static(__dirname + '/public'));
@@ -40,8 +48,8 @@ app.post('/', function (request, response) {
     response.status(200).send(html);
 });
 
-app.get('/json', function (request, response) {
-    response.status(200).json({president: 'lincoln'});
+app.get('/ping', function (request, response) {
+    response.status(200).json({msg: 'pong'});
 });
 
 app.get('/send_array', function (request, response) {
