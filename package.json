@@ -11,10 +11,9 @@
   },
   "dependencies": {
     "body-parser": "^1.18.x",
-    "ejs": "^2.5.x",
+    "ejs": "^3.1.x",
     "express": "^4.16.x",
-    "express-session": "^1.15.x",
-    "resurfaceio-logger": "^2.1.0"
+    "express-session": "^1.15.x"
   },
   "repository": {
     "type": "git",
