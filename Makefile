@@ -1,13 +1,13 @@
 PROJECT_NAME=hackernews
 
 start:
-	@docker build -t hackernews/node:latest .
+	@docker build -t test-express-hackernews --no-cache .
 	@docker-compose up --detach
 
 stop:
 	@docker-compose stop
 	@docker-compose down --volumes
-	@docker image rmi -f hackernews/node:latest
+	@docker image rmi -f test-express-hackernews:latest
 
 bash:
 	@docker exec -it hackernews bash

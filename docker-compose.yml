@@ -10,7 +10,7 @@ services:
       - '4002:4002'
 
   hackernews:
-    image: hackernews/node:latest
+    image: test-express-hackernews:latest
     container_name: hackernews
     volumes:
       - ./:/usr/app/
