@@ -1,6 +1,7 @@
 PROJECT_NAME=hackernews
 
 start:
+	@docker stop resurface
 	@docker build -t test-express-hackernews --no-cache .
 	@docker-compose up --detach
 
