@@ -1,7 +1,7 @@
 PROJECT_NAME=express
 
 start:
-	@docker stop resurface
+	@docker stop resurface || true
 	@docker build -t test-express --no-cache .
 	@docker-compose up --detach
 
