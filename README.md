@@ -4,7 +4,7 @@ Example web app built with Express
 ## Requirements
 
 * Install `docker` and `docker-compose`
-* Sign up for [Resurface Pilot Edition](https://resurface.io/pilot-edition) access
+* Install [Resurface Pilot Edition](https://resurface.io/pilot-installation)
 
 ## Ports Used
 
