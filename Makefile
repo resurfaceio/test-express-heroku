@@ -8,7 +8,7 @@ start:
 stop:
 	@docker-compose stop
 	@docker-compose down --volumes
-	@docker image rmi -f test-express:latest
+	@docker image rmi -f test-express
 
 bash:
 	@docker exec -it express bash
