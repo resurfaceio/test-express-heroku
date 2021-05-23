@@ -18,3 +18,7 @@ logs:
 
 ping:
 	@curl "http://localhost/ping"
+
+restart:
+	@docker-compose stop
+	@docker-compose up
