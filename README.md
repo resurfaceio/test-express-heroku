@@ -3,8 +3,8 @@ Example web app built with Express
 
 ## Requirements
 
-* Install `docker` and `docker-compose`
-* Install [Resurface Pilot Edition](https://resurface.io/pilot-installation)
+* docker
+* docker-compose
 
 ## Ports Used
 
