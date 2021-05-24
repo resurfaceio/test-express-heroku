@@ -12,7 +12,6 @@ services:
   express:
     image: test-express
     container_name: express
-    command: node index.js
     ports:
       - '80:5000'
     env_file:
